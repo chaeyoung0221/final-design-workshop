@@ -1,0 +1,463 @@
+
+:root {
+    --color-bg: #c0c0c0;
+    --color-section-1: #1AA598;
+    --color-section-2: #77CEC7;
+    --color-section-3: #ADE6ED;
+    --color-section-4: #FE9427;
+    --color-section-5: #FDB456;
+    --color-section-6: #FDAB96;
+    --color-section-7: #FEE7E1;
+    --color-section-8: #5B4A9A;
+     --color-section-9: #A59CC7; 
+      --color-section-10: #CF455D;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    font-family: "PP Supply Sans", sans-serif;
+    background: #ffffff;
+}
+
+
+.container {
+    width: 100%;
+    height: 100%;
+    font-weight: bold;
+}
+
+.map {
+  position: fixed;
+  width: 20%;
+margin: 50px 0;
+  padding: 0 20px;
+  font-weight: bold;
+}
+
+.sections {
+  position: absolute;
+    width: 80%;
+    height: 100%;
+    left: 20%;
+    padding: 30px 20px 0 0;
+    
+}
+
+.map > div {
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    padding: 20px;
+    border: none;
+    border-radius: 10px;
+    transition: height 0.5s;
+}
+.sections > div {
+    width: 100%;
+    margin: 20px 0 80px 0;
+}
+
+.header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 30px;
+    font-size: 14px;
+}
+.map > div p:nth-child(1) {
+    font-size: 13px;
+}
+
+.map > div p:nth-child(2) {
+    font-size: 20px;
+}
+.copy {
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    border: #000 2em;
+    border-radius: 20px;
+}
+
+.copy h1 {
+  font-weight: 100;
+  font-size: 15px;
+  color: #000;    
+  padding: 10px;              
+  border-radius: none;          
+  background-color: #fff;   
+  display: inline-block;   
+
+
+}
+.section-1 { height: 700px; }
+.section-2 { height: 370px; }
+.section-3 { height: 670px; }
+.section-4 { height: 320px; }
+.section-5 { height: 320px; }
+.section-6 { height: 340px; }
+.section-7 { height: 540px; }
+.section-9 { height: 350px; }
+.section-10 { height: 480px; }
+
+
+
+.whitespace {
+    width: 100%;
+    height: 100px;
+    border: none !important;
+}
+.s-1,
+.section-1 .header{
+    background: var(--color-section-1);
+    color: #fff;
+}
+
+.section-1 .copy {
+    background: #fff;
+    color: #fff;
+    border: 2px solid #1AA598; 
+}
+
+.s-2,
+.section-2 .header{
+    background: var(--color-section-2);
+    color: #fff;
+}
+.section-2 .copy {
+    background: #fff;
+    color: #fff;
+    border: 2px solid #77CEC7; 
+}
+.s-3,
+.section-3 .header{
+    background: var(--color-section-3);
+    color: #fff;
+}
+
+.section-3 .copy {
+    background: #fff;
+    color: #fff;
+    border: 2px solid #ADE6ED; 
+}
+
+.s-4,
+.section-4 .header {
+  background: var(--color-section-4);
+  color: #fff;
+}
+
+
+.section-4 .copy {
+    background: #fff;
+    color: #fff;
+    border: 2px solid #FE9427; 
+}
+
+
+.s-5,
+.section-5 .header{
+    background: var(--color-section-5);
+    color: #fff;
+}
+
+.section-5 .copy {
+    background: #fff;
+    color: #fff;
+    border: 2px solid #FDB456; 
+}
+
+.s-6,
+.section-6 .header{
+    background: var(--color-section-6);
+    color: #fff;
+}
+
+.section-6 .copy {
+    background: #fff;
+    color: #fff;
+    border: 2px solid #FDAB96; 
+}
+.s-7,
+.section-7 .header{
+    background: var(--color-section-7);
+    color: #fff;
+}
+
+.section-7 .copy {
+    background: #fff;
+    color: #fff;
+    border: 2px solid #FEE7E1; 
+}
+
+.s-8,
+.section-8 .header{
+    background: var(--color-section-8);
+    color: #fff;
+}
+
+.section-8 .copy {
+    background: #fff;
+    color: #fff;
+    border: 2px solid #5B4A9A; 
+}
+
+.s-9,
+.section-9 .header{
+    background: var(--color-section-9);
+    color: #fff;
+}
+
+.section-9 .copy {
+    background: #fff;
+    color: #fff;
+    border: 2px solid #A59CC7; 
+}
+.s-10,
+.section-10 .header{
+    background: var(--color-section-10);
+    color: #fff;
+}
+
+
+
+.section-10 .copy {
+    background: #fff;
+    color: #fff;
+    border: 2px solid #CF455D; 
+}
+
+.main-logo {
+  position: static;
+  top: 0;
+  left: 0;
+  z-index: 2000;
+  
+  background-color: #001AFF;
+  color: white;
+  font-weight: bold;
+  font-family: 'Fira Sans Extra Condensed', sans-serif;
+  font-size: 30px;
+  padding: 10px 20px;
+ 
+  text-decoration: none;
+
+  display: inline-block;
+  text-align: center;
+
+  width: auto;
+  height: auto;
+}
+
+.navbar {
+  position: static;
+  top: 60px; 
+  width: 100%;
+  z-index: 1500;
+  background-color: none;
+  padding: 1rem 2rem;
+  border-radius: 0 0 20px 20px;
+  border-color: #000 1em;
+  font-weight: bold;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar a {
+  position: relative;
+  top: 15px; /* 로고 높이만큼 아래로 */
+  left: 40;
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  font-weight: bold;
+  color: #1e1717;
+  border: 1.5px solid #000; /* 검정 테두리 추가 */
+  background-color: transparent; /* 배경 투명 */
+  text-decoration: none;
+}
+
+
+.navbar a:hover {
+  background-color: #727272;
+  color: white;
+  border: none;
+}
+.scroll-to-top {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  z-index: 9999;
+  background-color: #000;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  padding: 10px 20px;
+  font-size: 14px;
+  cursor: pointer;
+  display: none; /* 처음엔 숨김 */
+  transition: opacity 0.3s ease;
+}
+
+.scroll-to-top.show {
+  display: block;
+}
+
+ .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0));
+  pointer-events: none;
+}
+.image-container {
+  position: relative;
+  width: 250px;
+  height: 300px;
+  margin-bottom: 20px;
+  display: inline-block; /* 가로로 나란히 배치되도록 */
+  margin-right: 24px;     /* 이미지 간 간격 */
+ 
+}
+
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+   border-radius: 20px;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), transparent);
+  pointer-events: none;
+  border-radius: 20px;
+}
+
+.overlay-text {
+  position: absolute;
+  top: 10px;
+  left: 12px;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  z-index: 1;
+}
+
+.image-row {
+  display: flex;
+  gap: 10px; /* 이미지 간 간격 */
+  margin-top: 20px;
+  flex-wrap: wrap; /* 줄바꿈 허용 시 사용 */
+}
+
+.image-item {
+  position: relative;
+  text-align: center;
+  display: inline-block;
+  text-decoration: none; /* 링크 밑줄 제거 */
+  color: inherit; /* 텍스트 색상 상속 */
+}
+
+.image-container {
+  position: relative;
+  display: inline-block;
+    width: 230px;     /* 기존 200px → 150px */
+  height: 280px;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), transparent);
+  pointer-events: none;
+}
+
+.overlay-text {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  pointer-events: none;
+}
+.image-line {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+  flex-wrap: wrap;       
+  justify-content: flex-start;
+  width: 100%;
+}
+
+
+.image-item {
+  text-decoration: none;
+  color: inherit;
+}
+
+.image-container img {
+  display: block;
+  border-radius: 20px;
+}
+.image-text-set {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  padding: 20px;
+  color: #000;
+  border-radius: 20px;
+  margin: 30px 0;
+  flex-wrap: wrap; /* 모바일 대응 */
+}
+
+.image-side img {
+  width: 300px;
+  height: auto;
+  border-radius: 20px;
+  object-fit: cover;
+}
+
+.text-side {
+  flex: 1;
+  min-width: 250px;
+}
+
+.text-side h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.text-side p {
+  font-size: 16px;
+  line-height: 1.6;
+}

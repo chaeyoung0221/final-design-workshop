@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Design workshop</title>
+    <link rel="stylesheet" href="style4.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans+Extra+Condensed:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div class="main-logo">Maria claire</div>
+<hr class="logo-line" />
+    <nav class="navbar">
+    <ul>
+      <li><a href="메인.html">Contents</a></li>
+      <li><a href="promotion.html">Promotion</a></li>
+    </ul>
+  </nav>
+
+
+  
+<style>
+    .full-center-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+      position: relative;
+    }
+
+    .image-text-wrapper {
+      display: flex;
+      gap: 40px;
+      align-items: flex-start;
+      max-width: 1000px;
+    }
+
+    .left-image {
+      width: 300px;
+      height: auto;
+      border-radius: 20px;
+      object-fit: cover;
+    }
+
+    .text-side {
+      max-width: 600px;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    .text-side h2 {
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+
+    /* X 버튼 스타일 */
+    .close-btn {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      font-size: 30px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      z-index: 1000;
+      color: #333;
+    }
+
+    .close-btn:hover {
+      color: #000;
+    }
+  </style>
+</head>
+<body>
+
+<div class="full-center-wrapper">
+  <button class="close-btn" onclick="history.back()">✕</button>
+
+  <div class="image-text-wrapper">
+    <img src="images/Unknown22.jpeg" alt="예시 이미지" class="left-image">
+    
+    <div class="text-side">
+      <h2>5.미켈루치 글라스 Micheluzzi Glass,사코 오시아노 Sacco Oceano</h2>
+      <p>베네치아 유리예술가 마시모 미켈루치 Massimo Micheluzzi의 두 딸이 대를 이어 유리 제품을 만드는 브랜드.</p>
+      <p>마치 유리가 자루처럼 뒤틀린 듯한 모습을 표현했다.</p>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

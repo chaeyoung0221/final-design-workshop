@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Intro</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Sans+Extra+Condensed:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Fira Sans Extra Condensed', sans-serif;
+      font-weight: bold;
+      font-size: 30px;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    section {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .hero {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background-color: #fff;
+      color: #2935f8;
+      z-index: 1000;
+      transition: all 0.5s ease;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    .hero.shrink {
+      height: 80px;
+      background-color: #ffffff;
+      color: #2935f8;
+    }
+
+    .hero.shrink h1 {
+      font-size: 40px;
+    }
+
+    .hero h1 {
+      font-family: 'Fira Sans Extra Condensed', sans-serif;
+      font-weight: bold;
+      font-size: 60px;
+      line-height: 1;
+    }
+
+    .sticky-cards {
+      background-color: #fff;
+    }
+
+    .card {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      will-change: transform;
+      width: 25%;
+      height: 50%;
+      padding: 0.5em;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5em;
+      background-color: #202020;
+      color: #fff;
+    }
+
+    .card-img {
+      flex: 1 1 0;
+      min-height: 0;
+      width: 100%;
+    }
+
+    .card-content {
+      flex: 0 0 12px;
+      display: flex;
+      align-items: center;
+    }
+
+    .card-content p {
+      text-transform: uppercase;
+      font-family: "Akkurat Mono", monospace;
+      font-size: 12px;
+    }
+
+    @media (max-width: 900px) {
+      .card {
+        width: 75%;
+      }
+    }
+
+   
+    .main-link {
+      position: fixed;
+      bottom: 40px;
+      right: 40px;
+      background-color: #ffffff;
+      font-family: "Arial";
+      color: rgb(0, 0, 0);
+      padding: 0.5em 1em;
+      border-radius: 8px;
+      font-size: 18px;
+      font-weight: 600;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.5s ease;
+      z-index: 2000;
+    }
+
+    .main-link.show {
+      opacity: 1;
+      pointer-events: auto;
+    }
+  </style>
+</head>
+<body>
+  <section class="hero">
+    <h1>maria claire</h1>
+  </section>
+
+  <section class="sticky-cards">
+    <!-- 카드 7개 -->
+    <div class="card"><div class="card-img"><img src="images/Day | Poliform.jpg" alt="" /></div><div class="card-content"><p>Poliform</p></div></div>
+    <div class="card"><div class="card-img"><img src="images/France | Site Officiel | French Art de Vivre.jpg" alt="" /></div><div class="card-content"><p>rochebobois</p></div></div>
+    <div class="card"><div class="card-img"><img src="images/Carmo Sofa by BoConcept.jpg" alt="" /></div><div class="card-content"><p>BoConcept</p></div></div>
+    <div class="card"><div class="card-img"><img src="images/Hermès takes over MVRDV's Crystal Houses in Amsterdam.jpg" alt="" /></div><div class="card-content"><p>Hermès</p></div></div>
+    <div class="card"><div class="card-img"><img src="images/Chaumet engagement rings.jpg" alt="" /></div><div class="card-content"><p>Chaumet</p></div></div>
+    <div class="card"><div class="card-img"><img src="images/The crème that started it all ⭐️Now 15% of at Nordstrom!.jpg" alt="" /></div><div class="card-content"><p>LA MER</p></div></div>
+    <div class="card"><div class="card-img"><img src="images/Promemoria | Private Residence Designed by Rupp.jpg" alt="" /></div><div class="card-content"><p>PROMEMORIA</p></div></div>
+  </section>
+
+  <!-- ▶ 메인 페이지로 이동 링크 -->
+  <a href="메인.html" class="main-link">Go to Main</a>
+
+  <!-- 라이브러리 -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js"></script>
+
+  <!-- 사용자 정의 스크립트 -->
+  <script>
+    ScrollTrigger.create({
+      trigger: ".sticky-cards",
+      start: "top top",
+      onEnter: () => document.querySelector(".hero").classList.add("shrink"),
+      onLeaveBack: () => document.querySelector(".hero").classList.remove("shrink"),
+    });
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const lenis = new Lenis();
+      lenis.on("scroll", ScrollTrigger.update);
+      gsap.ticker.add((time) => {
+        lenis.raf(time * 1000);
+      });
+      gsap.ticker.lagSmoothing(0);
+
+      const cards = gsap.utils.toArray(".card");
+      const rotations = [-12, 10, -5, 5, -5, -2, 8];
+      const mainLink = document.querySelector(".main-link");
+
+      cards.forEach((card, index) => {
+        gsap.set(card, {
+          y: window.innerHeight,
+          rotate: rotations[index] || 0,
+        });
+      });
+
+      const scrollEnd = window.innerHeight * 8;
+
+      ScrollTrigger.create({
+        trigger: ".sticky-cards",
+        start: "top top",
+        end: `+=${scrollEnd}`,
+        pin: true,
+        pinSpacing: true,
+        scrub: 1,
+        onUpdate: (self) => {
+          const progress = self.progress;
+          const totalCards = cards.length;
+          const progressPerCard = 1 / totalCards;
+
+          // ▶ 마지막까지 스크롤하면 버튼 보이기
+          if (progress >= 0.999) {
+            mainLink.classList.add("show");
+          } else {
+            mainLink.classList.remove("show");
+          }
+
+          cards.forEach((card, index) => {
+            const cardStart = index * progressPerCard;
+            let cardProgress = (progress - cardStart) / progressPerCard;
+            cardProgress = Math.min(Math.max(cardProgress, 0), 1);
+
+            let yPos = window.innerHeight * (1 - cardProgress);
+            let xPos = 0;
+
+            if (cardProgress === 1 && index < totalCards - 1) {
+              const remainingProgress =
+                (progress - (cardStart + progressPerCard)) /
+                (1 - (cardStart + progressPerCard));
+
+              if (remainingProgress > 0) {
+                const distanceMultiplier = 1 - index * 0.15;
+                xPos =
+                  -window.innerWidth * 0.3 * distanceMultiplier * remainingProgress;
+                yPos =
+                  -window.innerHeight *
+                  0.3 *
+                  distanceMultiplier *
+                  0.3 *
+                  distanceMultiplier *
+                  remainingProgress;
+              }
+            }
+
+            gsap.to(card, {
+              y: yPos,
+              x: xPos,
+              duration: 0,
+              ease: "none",
+            });
+          });
+        },
+      });
+    });
+  </script>
+</body>
+</html>
